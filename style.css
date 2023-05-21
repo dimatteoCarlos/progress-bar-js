@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Combo&family=Lato:ital,wght@0,100;1,100;1,400&family=Ms+Madi&display=swap');
+
+:root {
+  --lineFill: #9c27b0;
+  --lineFill: teal;
+  --lineEmpty: #c1c1c1;
+  --font-size: 37px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: var(--font-size, 16px);
+}
+body {
+  background-color: #f7f6f5;
+  font-family: Lato;
+  font-weight: 700;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.container {
+  text-align: center;
+}
+h1 {
+  font-family: arial;
+  margin: 2rem;
+  color: var(--lineFill);
+  font-size: 1.2rem;
+}
+.progressContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 20rem;
+  margin-bottom: 2rem;
+}
+
+.progress {
+  background-color: var(--lineFill);
+  height: 0.25rem;
+  width: 0%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: -1;
+  transition: 0.4s ease-in-out;
+  transform: translateY(-50%);
+}
+.progressContainer::before {
+  content: '';
+  background-color: var(--lineEmpty);
+  position: absolute;
+  height: 0.25em;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  z-index: -10;
+  transform: translateY(-50%);
+  /* border:1px solid black; */
+}
+
+.circle {
+  background-color: #fff;
+  border: 0.25rem solid;
+  border-color: var(--lineEmpty);
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s ease;
+}
+
+.circle.active {
+  border-color: var(--lineFill);
+}
+
+.btn {
+  background-color: var(--lineFill);
+  border-radius: 0.4rem;
+  padding: 0.5rem 2rem;
+  border: 0;
+  color: #fff;
+  margin: 0.3rem;
+  cursor: pointer;
+  font-size: inherit;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:hover {
+  transform: scale(0.95);
+}
+
+.btn:disabled {
+  background-color: var(--lineEmpty);
+  color: gray;
+  cursor: not-allowed;
+}
+
+.fa-html5 {
+  color: #ff5773;
+  transition: color 0.4s ease 0.5s;
+  font-size: 1.8rem;
+  border-radius: 50%;
+}
+
+.fa-css3-alt {
+  color: #264de4;
+  transition: color 0.9s ease 0.5s;
+  font-size: 1.8rem;
+  border-radius: 50%;
+}
+.fa-js {
+  color: #f7e018;
+  transition: color 0.9s ease 0.5s;
+  font-size: 1.8rem;
+  border-radius: 50%;
+}
+.fa-react {
+  color: #61dbfb;
+  transition: color 0.9s ease 0.5s;
+  font-size: 1.8rem;
+  border-radius: 50%;
+}
